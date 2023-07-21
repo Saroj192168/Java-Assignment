@@ -1,16 +1,15 @@
 package com.JavaInternshipAssignmnet.demo.Controller;
 
-import java.sql.Date;
-import java.text.SimpleDateFormat;
 
-import javax.naming.spi.DirStateFactory.Result;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.util.DigestUtils;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
-import org.springframework.validation.ObjectError;
+
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
@@ -20,10 +19,20 @@ import com.JavaInternshipAssignmnet.demo.ServiceImp.UserServiceImp;
 import jakarta.validation.Valid;
 
 @Controller
-public class UserController {
+public class RegistrationController {
 	
 	@Autowired
 	private UserServiceImp usi;
+	
+	
+	@GetMapping("/register")
+	public String showRegistrationForm(Model model)
+	{
+		model.addAttribute("userData", new User());
+		return "registration";
+	}
+	
+	
 	
 	@PostMapping("/register")
 	public String Store( @Valid @ModelAttribute("userData") User userData,BindingResult result)

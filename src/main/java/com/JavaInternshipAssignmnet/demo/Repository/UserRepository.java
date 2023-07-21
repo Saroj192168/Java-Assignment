@@ -7,4 +7,5 @@ import com.JavaInternshipAssignmnet.demo.Model.User;
 public interface UserRepository extends JpaRepository<User, Long>{
 
 	public boolean existsByEmail(String email);
+	public User findByEmailAndPassword(String email,String Password);
 }
