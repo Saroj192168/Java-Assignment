@@ -51,7 +51,7 @@ public class SignInController {
 		{
 			
 		}
-		model.addAttribute("message","Credential Donot Match");
+		model.addAttribute("message","Credential Do not Match");
 		return "signin";
 		
 	}

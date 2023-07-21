@@ -47,10 +47,10 @@ public class RegistrationServiceImp implements IregistrationService {
 		
 		
 		
-		String subject="pleae verify your Email";
+		String subject="Please verify your Email";
 		String senderName="Saroj Koirala";
-		String mailContent="<p>Dear " + userData.getFname()+userData.getLname()+"</p>";
-		mailContent +="<p> please click the link below to verify to our registration</p>";
+		String mailContent="<p>Dear " + userData.getFname()+" "+userData.getLname()+"</p>";
+		mailContent +="<p> Please click the link below to verify to our registration</p>";
 		String verifyURL=siteURL+"/verify?code="+userData.getVerificationcode();
 		mailContent += "<h3><a href=\" "+verifyURL+"\">VERIFY</a><h3>";
 		mailContent +="<p>Thank You</p>"; 
