@@ -5,7 +5,8 @@ package com.JavaInternshipAssignmnet.demo.Model;
 import java.sql.Date;
 import java.time.LocalDate;
 
-
+import org.hibernate.annotations.ColumnDefault;
+import org.springframework.boot.context.properties.bind.DefaultValue;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import jakarta.persistence.Column;
@@ -48,10 +49,29 @@ public class User {
 	@Email
 	@NotEmpty
 	private String email;
+	@ColumnDefault("0")
+	private int enable;
+	
+	@Column(updatable = false)
+	private String verificationcode;
 	
 	
 	
 	
+	
+	
+	public int getEnable() {
+		return enable;
+	}
+	public void setEnable(int enable) {
+		this.enable = enable;
+	}
+	public String getVerificationcode() {
+		return verificationcode;
+	}
+	public void setVerificationcode(String verificationcode) {
+		this.verificationcode = verificationcode;
+	}
 	public LocalDate getDob() {
 		return dob;
 	}

@@ -7,5 +7,6 @@ public interface ISiginService {
 	
 
 	public User getEmailandPasssword(String email, String password);
+	
 
 }

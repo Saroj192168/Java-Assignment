@@ -35,9 +35,18 @@ public class SignInController {
 		User u=ssi.getEmailandPasssword(userData.getEmail(),userData.getPassword());
 		if(u!=null)
 		{
+			if(u.getEnable()==0)
+			{
+				model.addAttribute("message","Email has not been verified");
+				return "signin";
+			}
 			session.setAttribute("id", u.getId());
 			session.setMaxInactiveInterval(300);
 			 return "redirect:/dashboard";
+		}
+		if(userData.getEnable()==0)
+		{
+			
 		}
 		model.addAttribute("message","Credential Donot Match");
 		return "signin";
