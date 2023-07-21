@@ -1,10 +1,10 @@
 package com.JavaInternshipAssignmnet.demo.ServiceImp;
 
 import java.io.UnsupportedEncodingException;
-import java.net.http.HttpRequest;
+
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.mail.MailSender;
+	
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Service;

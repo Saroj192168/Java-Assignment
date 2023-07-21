@@ -2,7 +2,7 @@ package com.JavaInternshipAssignmnet.demo.Service;
 
 import com.JavaInternshipAssignmnet.demo.Model.User;
 
-public interface ISiginService {
+public interface IsiginService {
 	
 	
 

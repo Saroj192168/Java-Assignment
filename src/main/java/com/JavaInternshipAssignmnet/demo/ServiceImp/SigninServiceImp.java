@@ -5,10 +5,10 @@ import org.springframework.stereotype.Service;
 
 import com.JavaInternshipAssignmnet.demo.Model.User;
 import com.JavaInternshipAssignmnet.demo.Repository.UserRepository;
-import com.JavaInternshipAssignmnet.demo.Service.ISiginService;
+import com.JavaInternshipAssignmnet.demo.Service.IsiginService;
 
 @Service
-public class SigninServiceImp implements ISiginService {
+public class SigninServiceImp implements IsiginService {
 
 	@Autowired
 	private UserRepository userRepo;

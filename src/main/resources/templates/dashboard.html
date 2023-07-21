@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" xlmns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
@@ -31,8 +31,21 @@
 <div class="card-group">
   <div class="card">
     
-    <div class="card-body">
-      <h5 class="card-title" style="color:grey;">Welcome to the Dashboard</h5>
+    <div class="card-body" th:object="${userData}">
+      <h5 class="card-title" style="color:grey;">Your Details</h5>
+      
+       <label for="floatingInput">First Name</label>: <span th:text="*{fname}" ></span> </br>
+        <label for="floatingInput">Last Name</label>: <span th:text="*{lname}" ></span>
+        
+       <label for="floatingInput">Gender</label>: <span th:text="*{gender}" ></span> </br>
+       
+       <label for="floatingInput">Phone Number</label>: <span th:text="*{phone}" ></span> </br>
+       
+       <label for="floatingInput">Address</label>: <span th:text="*{address}" ></span> </br>
+       
+       <label for="floatingInput">Date of Birth</label>: <span th:text="*{dob}" ></span> </br>
+       
+       <label for="floatingInput">Email</label>: <span th:text="*{email}" ></span> </br>
       
     </div>
     

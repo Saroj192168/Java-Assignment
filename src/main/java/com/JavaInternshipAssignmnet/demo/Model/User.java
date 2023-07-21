@@ -2,11 +2,11 @@ package com.JavaInternshipAssignmnet.demo.Model;
 
 
 
-import java.sql.Date;
+
 import java.time.LocalDate;
 
 import org.hibernate.annotations.ColumnDefault;
-import org.springframework.boot.context.properties.bind.DefaultValue;
+
 import org.springframework.format.annotation.DateTimeFormat;
 
 import jakarta.persistence.Column;
@@ -18,7 +18,6 @@ import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Past;
-import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
 
 @Entity
@@ -43,6 +42,7 @@ public class User {
 	private String password;
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	@NotNull(message="please insert dob")
+	@Past
 	private LocalDate dob;
 	
 	@Column(unique=true)

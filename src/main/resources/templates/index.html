@@ -1,31 +1,21 @@
 <!DOCTYPE html>
-<html lang="en" xlmns:th="http://www.thymelead.org">
+<html lang="en" xlmns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Sign Up Form by Colorlib</title>
+    <title>MeLogin Platform </title>
 
 
 <!-- CSS -->
  <div th:insert="includes/style.html"></div>
-<style>
+ <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-.button {
-  background-color: #4CAF50; /* Green */
-  border: none;
-  color: #008CBA;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: contents;
-  font-size: 16px;
-}
-</style>
 
 
 </head>
 <body>
+
 
     
 
@@ -42,8 +32,15 @@
 
                     <div class="signin-form">
                         <h2 class="form-title" >Welcome To MeLogin Platform</h2>
-                        <button class="button"><a href="/signin">Sign in </a></button> &nbsp;&nbsp;&nbsp;
-                         <button class="button"><a href="/register">Registration </a></button> 
+                              <div class="form-group form-button">
+                                <a href="/signin"><input type="submit" name="signin" id="signin" class="form-submit" value="Sign In"/></a>
+                           
+                                 <a href="/register"><input type="submit" name="register" id="register" class="form-submit" value="Register"/>
+                            </div>
+                        
+                    </div>
+                    
+                       
                        
                     </div>
                 </div>

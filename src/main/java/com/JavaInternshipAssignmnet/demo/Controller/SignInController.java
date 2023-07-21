@@ -19,6 +19,8 @@ public class SignInController {
 	private SigninServiceImp ssi;
 	
 	
+	//to display the sign in page
+	
 	@GetMapping("/signin")
 	public String showSignInForm(Model model)
 	{
@@ -27,6 +29,7 @@ public class SignInController {
 	}
 	
 	
+	//to check the credential after the user submit email and password
 	
 	@PostMapping("/signin")
 	public String login(@ModelAttribute User userData,Model model,HttpSession session )
@@ -53,6 +56,8 @@ public class SignInController {
 		
 	}
 	
+	
+	//to handle the logout
 	@GetMapping("/signout")
 	public String logout(HttpSession session)
 	{

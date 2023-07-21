@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import com.JavaInternshipAssignmnet.demo.Model.User;
 import com.JavaInternshipAssignmnet.demo.ServiceImp.RegistrationServiceImp;
-import com.JavaInternshipAssignmnet.demo.ServiceImp.UserServiceImp;
+
 
 import jakarta.mail.MessagingException;
 import jakarta.servlet.http.HttpServletRequest;
@@ -32,6 +32,7 @@ public class RegistrationController {
 	private RegistrationServiceImp rsi;
 	
 	
+	//To display the registration page
 	@GetMapping("/register")
 	public String showRegistrationForm(Model model)
 	{
@@ -40,7 +41,7 @@ public class RegistrationController {
 	}
 	
 	
-	
+	//to store the User after registration
 	@PostMapping("/register")
 	public String Store( @Valid @ModelAttribute("userData") User userData,BindingResult result,HttpServletRequest request) throws UnsupportedEncodingException, MessagingException
 	{
@@ -59,11 +60,11 @@ public class RegistrationController {
 		userData.setVerificationcode(random);
 	    rsi.addUser(userData); 
 	    String siteURL=Utility.getSiteUrl(request);
-	    rsi.sendVerficationEmail(userData,siteURL);
+	    rsi.sendVerficationEmail(userData,siteURL);//send email to the user email with verification code
 		return "registerSuccess";
 	}
 	
-	
+	//to verify the email after user click from their gmail
 	@GetMapping("verify")
 	public String verifyEmail(@Param("code") String code,Model model)
 	{
