@@ -1,7 +1,10 @@
 package com.JavaInternshipAssignmnet.demo.Controller;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+
+import com.JavaInternshipAssignmnet.demo.Model.User;
 
 @Controller
 public class IndexController {
@@ -18,9 +21,10 @@ public class IndexController {
 		return "signin";
 	}
 	
-	@GetMapping("/registration")
-	public String showRegistrationForm()
+	@GetMapping("/register")
+	public String showRegistrationForm(Model model)
 	{
+		model.addAttribute("userData", new User());
 		return "registration";
 	}
 
