@@ -20,8 +20,9 @@ public class SignInController {
 	
 	
 	@GetMapping("/signin")
-	public String showSignInForm()
+	public String showSignInForm(Model model)
 	{
+		model.addAttribute("message","");
 		return "signin";
 	}
 	
@@ -38,9 +39,16 @@ public class SignInController {
 			session.setMaxInactiveInterval(300);
 			 return "redirect:/dashboard";
 		}
-		
+		model.addAttribute("message","Credential Donot Match");
 		return "signin";
 		
+	}
+	
+	@GetMapping("/signout")
+	public String logout(HttpSession session)
+	{
+		session.invalidate();
+		return "redirect:/signin";
 	}
 
 }

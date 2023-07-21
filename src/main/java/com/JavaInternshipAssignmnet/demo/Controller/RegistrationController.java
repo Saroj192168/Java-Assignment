@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import com.JavaInternshipAssignmnet.demo.Model.User;
+import com.JavaInternshipAssignmnet.demo.ServiceImp.RegistrationServiceImp;
 import com.JavaInternshipAssignmnet.demo.ServiceImp.UserServiceImp;
 
 import jakarta.validation.Valid;
@@ -22,7 +23,7 @@ import jakarta.validation.Valid;
 public class RegistrationController {
 	
 	@Autowired
-	private UserServiceImp usi;
+	private RegistrationServiceImp rsi;
 	
 	
 	@GetMapping("/register")
@@ -37,8 +38,8 @@ public class RegistrationController {
 	@PostMapping("/register")
 	public String Store( @Valid @ModelAttribute("userData") User userData,BindingResult result)
 	{
-	  System.out.println(usi.findEmail(userData.getEmail()));
-		if(usi.findEmail(userData.getEmail())==true)
+	  System.out.println(rsi.findEmail(userData.getEmail()));
+		if(rsi.findEmail(userData.getEmail())==true)
 		{
 			result.addError(new FieldError("userData","email","Email Already exists"));
 		}
@@ -48,8 +49,8 @@ public class RegistrationController {
 			return "registration";
 		}
 		userData.setPassword(DigestUtils.md5DigestAsHex(userData.getPassword().getBytes()));
-	    usi.addUser(userData);     	
-		return "redirect:/signin";
+	    rsi.addUser(userData);     	
+		return "registerSuccess";
 	}
 
 }

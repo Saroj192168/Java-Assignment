@@ -8,8 +8,7 @@ public interface IuserService {
 	
 	public  Optional<User> getUserById(Long id);
 	public void updateUser(User u,Long id);
-	public void addUser(User u);
-	public boolean findEmail(String email);
+	
 	
 	
 
